@@ -16,17 +16,17 @@ if a == 1:
 		print(chance,"lives left")
 		cha = input("Enter your choice: ")
 		print(cha.capitalize())
-		count = 0
-		pos = 0
-		for i in b:
-			if cha.capitalize() == i:
-				guess[count]=cha
-			else:
-				count = count + 1
+		idx = 0
+		for idx,val in b:
+			if cha.capitalize() == val:
+				guess[idx]=cha
+
+			# else:
+			# 	chance=chance-1
+
 		print(*guess)
 
 
-		chance=chance-1
 
 
 

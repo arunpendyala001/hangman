@@ -11,15 +11,19 @@ if a == 1:
 		guess.append("_")
 	print(*guess)
 	print("Start guessing")
-	
+
 	while chance>0:
 		print(chance,"lives left")
 		cha = input("Enter your choice: ")
+		print(cha.capitalize())
 		count = 0
+		pos = 0
 		for i in b:
-			# if(cha == i)
-
-			count = count + 1
+			if cha.capitalize() == i:
+				guess[count]=cha
+			else:
+				count = count + 1
+		print(*guess)
 
 
 		chance=chance-1

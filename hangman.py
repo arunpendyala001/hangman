@@ -1,4 +1,5 @@
 import random
+import string
 
 a = int(input("Select a category\n1 Movies\n2 Cars \n"))
 Movies = ["DARLING", "AVENGERS"]
@@ -11,18 +12,26 @@ if a == 1:
 		guess.append("_")
 	print(*guess)
 	print("Start guessing")
+	print(b)
+
 
 	while chance>0:
+		c = 1
 		print(chance,"lives left")
 		cha = input("Enter your choice: ")
+		c = c + 1
 		print(cha.capitalize())
-		idx = 0
-		for idx,val in b:
+		list(b)
+		for idx,val in enumerate(b):
+			print(val)
 			if cha.capitalize() == val:
-				guess[idx]=cha
-
-			# else:
+				guess[idx]=cha.capitalize()
+				break
+			# elif cha.capitalize() != val:
 			# 	chance=chance-1
+			else:
+				chance = chance - 1
+				continue
 
 		print(*guess)
 
